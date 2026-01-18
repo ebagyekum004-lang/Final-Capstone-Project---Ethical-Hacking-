@@ -742,3 +742,166 @@ This challenge demonstrated how improperly secured SMB shares can expose sensiti
 ---
 
 
+---
+
+## Challenge 4: Analyze a PCAP File to Discover Sensitive Information
+
+This repository documents the analysis of a **packet capture (PCAP) file** to identify sensitive information transmitted over the network in **clear text**. The objective of this challenge was to analyze captured traffic, identify the target system and accessed resources, and retrieve the **Challenge 4 code** from an exposed file.
+
+All activities were conducted **within an authorized lab environment** and in accordance with the **Cisco Networking Academy Ethical Hacking Pentesting Agreement**.
+
+---
+
+## Objectives
+
+The objectives of this challenge were to:
+
+* Analyze a PCAP file using Wireshark
+* Identify the target IP address from captured traffic
+* Extract URLs and file paths from network streams
+* Locate and view the file containing the Challenge 4 code
+* Understand the risks of transmitting data in clear text
+* Propose remediation techniques to protect sensitive data
+
+---
+
+## Lab Environment
+
+* **Attacker Machine:** Kali Linux
+* **Analysis Tool:** Wireshark
+* **PCAP File:** `SA.pcap`
+* **Protocol(s) Observed:** HTTP / TCP
+* **Vulnerability Type:** Clear-text data transmission
+
+---
+
+## Tools Used
+
+* **Wireshark:** Packet capture analysis and TCP stream inspection
+* **Web Browser:** Accessing discovered URLs
+
+---
+
+## Methodology & Results
+
+### Step 1: PCAP File Analysis
+
+The provided packet capture file (`SA.pcap`) was opened in **Wireshark** for analysis.
+
+**Screenshot Placeholder:**
+
+```markdown
+![SA.pcap Opened in Wireshark](images/wireshark_open_pcap.png)
+```
+
+Captured packets were reviewed to identify communication between hosts, focusing on HTTP and TCP traffic.
+
+---
+
+### Step 2: Identifying Target IP Address and URLs
+
+Packet inspection revealed the **IP address of the target system** and URLs accessed during the captured session.
+
+Wireshark’s **Follow TCP Stream** feature was used to reconstruct application-layer conversations and reveal file paths and directory structures.
+
+**Screenshot Placeholder:**
+
+```markdown
+![Follow TCP Stream](images/follow_tcp_stream.png)
+```
+
+---
+
+### Step 3: Accessing Discovered Directories
+
+The URLs identified in the TCP streams were accessed using a web browser to inspect the exposed directories on the target system.
+
+**Screenshot Placeholders:**
+
+```markdown
+![Accessing Target Directory](images/browser_directory_access.png)
+![Directory Contents](images/browser_directory_contents.png)
+```
+
+---
+
+### Step 4: Locating the Challenge 4 File
+
+Within the exposed directory, a file containing sensitive information was identified and opened.
+
+**Observed File Contents:**
+
+* Username
+* Password
+* Digital signatures
+
+**Screenshot Placeholder:**
+
+```markdown
+![Challenge 4 File Contents](images/challenge4_file_contents.png)
+```
+
+---
+
+### Step 5: Retrieving the Challenge 4 Code
+
+The Challenge 4 flag was successfully identified from the file contents.
+
+* **Challenge 4 Code:** `21z-1478K`
+
+**Screenshot Placeholder:**
+
+```markdown
+![Challenge 4 Flag](images/challenge4_flag.png)
+```
+
+---
+
+## Findings
+
+* Sensitive data was transmitted in clear text
+* Network traffic could be reconstructed using PCAP analysis
+* File paths and credentials were exposed through HTTP traffic
+* Lack of encryption enabled unauthorized data disclosure
+
+---
+
+## Remediation: Preventing Clear-Text Data Exposure
+
+The following remediation techniques are recommended to prevent unauthorized viewing of sensitive data:
+
+### 1. Encrypt Files Before Transmission
+
+* Encrypt files using tools such as **PGP/GPG**, **AES**, or **BitLocker**
+* Ensure only authorized recipients can decrypt the data
+* Protects data even if network traffic is intercepted
+
+---
+
+### 2. Encrypt Network Traffic (IPsec / VPN)
+
+* Implement **IPsec** to encrypt traffic between systems
+* Use **VPN tunnels** to secure SMB and HTTP communications
+* Prevents packet sniffing and traffic reconstruction
+
+---
+
+## Ethical Considerations
+
+All actions in this challenge were conducted:
+
+* Within an **authorized Cisco NetAcad lab**
+* Under a signed **Pentesting Agreement**
+* For **educational and defensive purposes only**
+* Without targeting real-world users or networks
+
+Unauthorized packet capture analysis is illegal and unethical.
+
+---
+
+## Reflection
+
+This challenge demonstrated how unencrypted network traffic can expose sensitive information to attackers. The exercise reinforced the importance of encryption at both the file and network levels to protect confidentiality and prevent data leakage.
+
+---
+
