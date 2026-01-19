@@ -164,12 +164,8 @@ The application was accessed using the default credentials:
 
 * **Username:** admin
 * **Password:** password
+<img width="931" height="506" alt="Screenshot 2026-01-18 030927" src="https://github.com/user-attachments/assets/fdca1867-8f1e-41c9-af5c-0e8ff5f1a37d" />
 
-**Screenshot Placeholder:**
-
-```markdown
-![DVWA Login Page](images/dvwa_login.png)
-```
 
 After logging in, the DVWA security level was configured to **Low**:
 
@@ -179,31 +175,20 @@ After logging in, the DVWA security level was configured to **Low**:
 
 At this security level, input sanitization is disabled, making the application vulnerable to SQL Injection.
 
-**Screenshot Placeholder:**
+<img width="899" height="511" alt="Screenshot 2026-01-18 042338" src="https://github.com/user-attachments/assets/e29a635b-6161-49f8-ae91-b14793086ea9" />
 
-```markdown
-![DVWA Security Level Low](images/dvwa_security_low.png)
-```
 
 ---
 
 ### Step 2: SQL Injection and Database Enumeration
 
 The **SQL Injection** module was selected from the DVWA menu. The application presented a vulnerable input field labeled **User ID**.
+<img width="894" height="495" alt="Screenshot 2026-01-18 031713" src="https://github.com/user-attachments/assets/a793f751-463c-41f1-ab91-f1bd139b21f5" />
 
-**Screenshot Placeholder:**
 
-```markdown
-![SQL Injection Input Form](images/sql_injection_form.png)
-```
 
 Initial testing confirmed the presence of a SQL Injection vulnerability when crafted input altered application behavior.
 
-**Screenshot Placeholders:**
-
-```markdown
-![SQLi Vulnerability Confirmation](images/sqli_test.png)
-```
 
 ---
 
@@ -211,11 +196,8 @@ Initial testing confirmed the presence of a SQL Injection vulnerability when cra
 
 The database name was successfully identified using a UNION-based SQL Injection technique.
 
-**Screenshot Placeholder:**
+<img width="917" height="491" alt="Screenshot 2026-01-18 032253" src="https://github.com/user-attachments/assets/fe751c75-730b-409e-9b29-5bc69ca5585f" />
 
-```markdown
-![Database Name Enumeration](images/database_name.png)
-```
 
 ---
 
@@ -224,41 +206,32 @@ The database name was successfully identified using a UNION-based SQL Injection 
 The database schema was enumerated to identify tables containing authentication data. The `users` table was identified as containing usernames and password hashes.
 
 Column enumeration revealed fields related to usernames and passwords.
+<img width="1053" height="490" alt="Screenshot 2026-01-18 032947" src="https://github.com/user-attachments/assets/43cb51a4-149d-4ae0-8d53-cbfe85bdd391" />
+<img width="1060" height="464" alt="Screenshot 2026-01-18 033007" src="https://github.com/user-attachments/assets/c8a42590-4556-41d8-8ce5-337c6bd020fe" />
 
-**Screenshot Placeholders:**
 
-```markdown
-![Table Enumeration](images/table_enum.png)
-![Column Enumeration](images/column_enum.png)
-```
 
 ---
 
 ### Credential Extraction
 
 Usernames and password hashes were successfully retrieved from the `users` table, including **Bob Smith’s account**.
+<img width="698" height="345" alt="Screenshot 2026-01-18 033712" src="https://github.com/user-attachments/assets/9a7199b0-5076-4758-920e-d6f98aaa9a54" />
 
-**Screenshot Placeholder:**
 
-```markdown
-![Credential Dump](images/credential_dump.png)
-```
 
 ---
 
 ### Step 3: Password Hash Cracking
 
-Bob Smith’s password hash was extracted and cracked using a password-cracking tool.
+Bob Smith’s password hash was extracted and cracked using a password-cracking tool. In this case. Crack Station online password cracking site was used.
 
 **Result:**
 Bob Smith’s plaintext password was successfully recovered.
+<img width="1342" height="571" alt="Screenshot 2026-01-18 033911" src="https://github.com/user-attachments/assets/08bb32ea-1842-4305-b6db-b067e2b427b5" />
+<img width="1234" height="503" alt="Screenshot 2026-01-18 033956" src="https://github.com/user-attachments/assets/eef50e59-64c1-40e3-84e0-7c67fd68debc" />
 
-**Screenshot Placeholders:**
 
-```markdown
-![Password Hash](images/password_hash.png)
-![Password Cracked](images/password_cracked.png)
-```
 
 ---
 
@@ -272,12 +245,8 @@ ssh smithy@192.168.0.10
 
 A port scan confirmed that SSH was available on the target system.
 
-**Screenshot Placeholders:**
-
-```markdown
-![Nmap Scan](images/nmap_ssh.png)
-![SSH Login](images/ssh_login.png)
-```
+<img width="659" height="513" alt="Screenshot 2026-01-18 035438" src="https://github.com/user-attachments/assets/74d4c323-6e8b-40f1-a98b-f1a43f826697" />
+<img width="724" height="277" alt="Screenshot 2026-01-18 040445" src="https://github.com/user-attachments/assets/a1525308-f690-48cf-aded-ad0cbb4ed5b3" />
 
 ---
 
@@ -288,11 +257,9 @@ After logging in, directory contents were enumerated to locate the challenge fil
 **Result:**
 The file displayed the Challenge 1 flag/code.
 
-**Screenshot Placeholder:**
+<img width="752" height="305" alt="Screenshot 2026-01-18 040512" src="https://github.com/user-attachments/assets/4a223659-76f4-43b7-bfe8-ec8ea5655276" />
+<img width="727" height="507" alt="Screenshot 2026-01-18 040924" src="https://github.com/user-attachments/assets/d70b5d20-6aca-436d-81c9-b7234bc52e5a" />
 
-```markdown
-![Challenge File Contents](images/challenge_flag.png)
-```
 
 ---
 
@@ -394,11 +361,7 @@ The application was accessed using the default administrator credentials:
 * **Username:** admin
 * **Password:** password
 
-**Screenshot Placeholder:**
-
-```markdown
-![DVWA Login](images/dvwa_login.png)
-```
+<img width="931" height="506" alt="Screenshot 2026-01-18 030927" src="https://github.com/user-attachments/assets/e572b199-0d38-4de0-a12a-740dcdd7fe25" />
 
 After authentication, the application security level was set to **Low** to simulate a vulnerable configuration.
 
@@ -406,11 +369,7 @@ After authentication, the application security level was set to **Low** to simul
 * Select **Low**
 * Click **Submit**
 
-**Screenshot Placeholder:**
 
-```markdown
-![DVWA Security Level Low](images/dvwa_security_low.png)
-```
 
 ---
 
