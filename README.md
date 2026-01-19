@@ -1,9 +1,6 @@
 # Final-Capstone-Project---Ethical-Hacking-
 
-
-# Final Capstone Project Report
-
-**Ethical Hacking & Penetration Testing Assessment**
+## Final Capstone Project Report
 
 ---
 
