@@ -722,12 +722,7 @@ The objectives of this challenge were to:
 ### Step 1: PCAP File Analysis
 
 The provided packet capture file (`SA.pcap`) was opened in **Wireshark** for analysis.
-
-**Screenshot Placeholder:**
-
-```markdown
-![SA.pcap Opened in Wireshark](images/wireshark_open_pcap.png)
-```
+<img width="603" height="261" alt="Screenshot 2026-01-19 022831" src="https://github.com/user-attachments/assets/047ac4da-ae9f-4f1c-b608-c24ac11ad9b6" />
 
 Captured packets were reviewed to identify communication between hosts, focusing on HTTP and TCP traffic.
 
@@ -736,27 +731,22 @@ Captured packets were reviewed to identify communication between hosts, focusing
 ### Step 2: Identifying Target IP Address and URLs
 
 Packet inspection revealed the **IP address of the target system** and URLs accessed during the captured session.
+<img width="880" height="611" alt="Screenshot 2026-01-19 022913" src="https://github.com/user-attachments/assets/95a8d5d0-1c7b-4384-a152-376ce44fbda8" />
 
 Wireshark’s **Follow TCP Stream** feature was used to reconstruct application-layer conversations and reveal file paths and directory structures.
+<img width="771" height="614" alt="Screenshot 2026-01-19 024215" src="https://github.com/user-attachments/assets/7e0bbc81-51c4-406f-8949-9aa4eae1ee4d" />
 
-**Screenshot Placeholder:**
 
-```markdown
-![Follow TCP Stream](images/follow_tcp_stream.png)
-```
 
 ---
 
 ### Step 3: Accessing Discovered Directories
 
 The URLs identified in the TCP streams were accessed using a web browser to inspect the exposed directories on the target system.
+![IMG_2341](https://github.com/user-attachments/assets/806054ce-7b8c-4102-9d33-8a8de3d7b930)
+![IMG_2342](https://github.com/user-attachments/assets/4c3f14e5-f784-4f46-88ed-bdef06351a7d)
 
-**Screenshot Placeholders:**
 
-```markdown
-![Accessing Target Directory](images/browser_directory_access.png)
-![Directory Contents](images/browser_directory_contents.png)
-```
 
 ---
 
@@ -769,12 +759,8 @@ Within the exposed directory, a file containing sensitive information was identi
 * Username
 * Password
 * Digital signatures
+![IMG_2382](https://github.com/user-attachments/assets/29f91f1f-1483-48f1-9864-daec1e694d3a)
 
-**Screenshot Placeholder:**
-
-```markdown
-![Challenge 4 File Contents](images/challenge4_file_contents.png)
-```
 
 ---
 
@@ -783,12 +769,9 @@ Within the exposed directory, a file containing sensitive information was identi
 The Challenge 4 flag was successfully identified from the file contents.
 
 * **Challenge 4 Code:** `21z-1478K`
+![IMG_2382 copy](https://github.com/user-attachments/assets/7fe03774-8b75-42a3-9370-446274faef18)
 
-**Screenshot Placeholder:**
 
-```markdown
-![Challenge 4 Flag](images/challenge4_flag.png)
-```
 
 ---
 
