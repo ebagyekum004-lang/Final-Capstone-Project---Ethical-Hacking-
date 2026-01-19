@@ -551,11 +551,8 @@ Identify systems running SMB services by detecting open NetBIOS and Microsoft-DS
 **Result:**
 The host `10.5.5.14` was identified with ports **139** and **445** open, indicating an active SMB server.
 
-**Screenshot Placeholder:**
-
-```markdown
-![Nmap SMB Scan](images/nmap_smb_scan.png)
-```
+<img width="490" height="591" alt="Screenshot 2026-01-18 044449" src="https://github.com/user-attachments/assets/b8cf1f88-c175-4b59-aaad-745c43c13c2e" />
+<img width="617" height="575" alt="Screenshot 2026-01-18 044558" src="https://github.com/user-attachments/assets/9cac374e-f0de-422c-8fdd-68a3d112067c" />
 
 ---
 
@@ -575,22 +572,17 @@ Discover shared directories exposed by the SMB server.
 **Result:**
 Multiple SMB shares were identified on the target system.
 
-**Screenshot Placeholder:**
-
-```markdown
-![Enum4Linux Share Enumeration](images/enum4linux_shares.png)
-```
 
 ---
 
 ### Step 3: Identifying Anonymous Access
 
-To determine which SMB shares were accessible without valid credentials, **SMBMap** was used.
+To determine which SMB shares were accessible without valid credentials, **smbclient** was used.
 
 **Command:**
 
 ```bash
-smbmap -H 10.5.5.14
+smbclient -L //10.5.5.14 -N
 ```
 
 **Purpose:**
@@ -606,11 +598,8 @@ The following shares were listed on the SMB server:
 
 Some of these shares were accessible without authentication, indicating a security misconfiguration.
 
-**Screenshot Placeholder:**
+<img width="633" height="593" alt="Screenshot 2026-01-18 044905" src="https://github.com/user-attachments/assets/ebf5fb0b-1b2b-40c6-8df1-a4dfbc12d53e" />
 
-```markdown
-![SMBMap Anonymous Access](images/smbmap_access.png)
-```
 
 ---
 
@@ -630,12 +619,12 @@ Access shared directories and locate the file containing the Challenge 3 code.
 **Result:**
 The challenge file was successfully located, downloaded, and opened locally.
 
-**Screenshot Placeholders:**
+<img width="801" height="227" alt="Screenshot 2026-01-18 045120" src="https://github.com/user-attachments/assets/265aa48f-e76d-4c48-a5b7-96220f0a4b51" />
+contiuatiom
+<img width="852" height="571" alt="Screenshot 2026-01-18 045552" src="https://github.com/user-attachments/assets/00682c29-3920-4bc9-b13e-d93ef4e4d9a4" />
+continuation
+<img width="941" height="581" alt="Screenshot 2026-01-18 045707" src="https://github.com/user-attachments/assets/92e4f3c0-791a-47bd-8eb8-e826f1ea452d" />
 
-```markdown
-![SMBClient Access](images/smbclient_access.png)
-![Challenge 3 File](images/challenge3_file.png)
-```
 
 ---
 
