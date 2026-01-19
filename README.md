@@ -368,6 +368,7 @@ After authentication, the application security level was set to **Low** to simul
 * Navigate to **DVWA Security**
 * Select **Low**
 * Click **Submit**
+<img width="934" height="504" alt="Screenshot 2026-01-18 031220" src="https://github.com/user-attachments/assets/e28c0fb7-9910-4486-b2a1-d9e58e993aa4" />
 
 
 
@@ -392,11 +393,9 @@ Nikto identified two directories with directory listing enabled:
 * `/config/`
 * `/docs/`
 
-**Screenshot Placeholder:**
+<img width="980" height="503" alt="Screenshot 2026-01-18 042842" src="https://github.com/user-attachments/assets/cacc7c7b-0f45-4167-8543-45347665e5fd" />
 
-```markdown
-![Nikto Scan Results](images/nikto_scan.png)
-```
+
 
 ---
 
@@ -410,13 +409,9 @@ Manual URL manipulation was used to access the exposed directories through a web
 http://10.5.5.12/config/
 http://10.5.5.12/docs/
 ```
+<img width="914" height="541" alt="Screenshot 2026-01-18 043303" src="https://github.com/user-attachments/assets/9f481c94-b87e-4f21-ae92-be8067e20018" />
 
-**Screenshot Placeholders:**
 
-```markdown
-![Config Directory Listing](images/config_directory.png)
-![Docs Directory Listing](images/docs_directory.png)
-```
 
 The contents of each directory were reviewed to identify files related to the challenge.
 
@@ -431,22 +426,14 @@ During directory enumeration, the file **db_form.html** was identified as the fi
 
 The file was opened directly through the browser to view its contents.
 
-**Screenshot Placeholder:**
-
-```markdown
-![Challenge 2 File](images/db_form_file.png)
-```
 
 **Result:**
 The flag message contained in the file was successfully retrieved.
 
 * **Challenge 2 Code:** `aWe-4975`
 
-**Screenshot Placeholder:**
+<img width="925" height="319" alt="Screenshot 2026-01-18 043348" src="https://github.com/user-attachments/assets/ba1396e4-8db6-4077-8769-f754b1274e40" />
 
-```markdown
-![Challenge 2 Flag](images/challenge2_flag.png)
-```
 
 ---
 
